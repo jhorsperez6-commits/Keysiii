@@ -1,152 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SERVE PENE HUB — Key</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #0b0c10;
-      color: #e0e0e0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: #121316;
-      border: 2px solid #00bfff;
-      border-radius: 16px;
-      padding: 32px 24px;
-      width: 100%;
-      max-width: 380px;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(0, 191, 255, 0.25);
-    }
-
-    .header {
-      margin-bottom: 28px;
-    }
-
-    .header h1 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #00bfff;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      text-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
-    }
-
-    .header p {
-      font-size: 14px;
-      color: #00ff88;
-      font-weight: 600;
-    }
-
-    .key-box {
-      background-color: rgba(0, 255, 136, 0.08);
-      border: 2px solid #00ff88;
-      border-radius: 12px;
-      padding: 18px 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
-    }
-
-    .key-label {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .key-value {
-      font-size: 20px;
-      font-weight: 700;
-      color: #00ff88;
-      letter-spacing: 2px;
-      word-break: break-all;
-      font-family: "SF Mono", "Fira Code", "Courier New", monospace;
-      text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
-    }
-
-    .copy-btn {
-      width: 100%;
-      padding: 16px;
-      font-size: 16px;
-      font-weight: 700;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #00ff88, #00cc6a);
-      color: #0b0c10;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-    }
-
-    .copy-btn:active {
-      transform: scale(0.97);
-    }
-
-    .instructions {
-      margin-top: 28px;
-      font-size: 13px;
-      color: #999;
-      line-height: 1.5;
-    }
-
-    .instructions strong {
-      color: #00bfff;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Key</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0b0c10;color:#e0e0e0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{background:#121316;border:2px solid #00bfff;border-radius:16px;padding:32px 24px;width:100%;max-width:380px;text-align:center;box-shadow:0 0 25px rgba(0,191,255,.25)}
+h1{font-size:22px;color:#00bfff;margin-bottom:6px;text-shadow:0 0 12px rgba(0,191,255,.5)}
+.sub{font-size:13px;color:#888;margin-bottom:28px}
+.num-box{font-size:15px;color:#00ff88;margin-bottom:20px}
+.num-box span{font-weight:800;font-size:20px}
+input{width:100%;padding:14px;font-size:18px;text-align:center;border-radius:10px;border:1px solid #333;background:#1a1b1f;color:#fff;margin-bottom:14px;outline:none}
+input:focus{border-color:#00bfff}
+button{width:100%;padding:15px;font-size:16px;font-weight:700;border:none;border-radius:10px;background:linear-gradient(135deg,#00ff88,#00cc6a);color:#0b0c10;cursor:pointer}
+.err{color:#ff4d4d;font-size:13px;margin-top:12px;min-height:18px}
+.key-box{display:none;margin-top:22px;background:rgba(0,255,136,.08);border:2px solid #00ff88;border-radius:12px;padding:16px;box-shadow:0 0 15px rgba(0,255,136,.2)}
+.key-box .lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.key-box .val{font-size:19px;font-weight:700;color:#00ff88;word-break:break-all;font-family:monospace}
+.copy{margin-top:14px;width:100%;padding:13px;font-size:15px;font-weight:700;border:none;border-radius:10px;background:#00bfff;color:#0b0c10;cursor:pointer}
+.info{margin-top:26px;font-size:12px;color:#777;line-height:1.5}
+.info b{color:#00bfff}
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="header">
-      <h1>SERVE PENE HUB</h1>
-      <p>¡Anuncios Completados con Éxito!</p>
-    </div>
-
-    <div class="key-box">
-      <div class="key-label">Tu Key</div>
-      <div class="key-value" id="keyDisplay">CASEY-SP-7X9K-2M4P-Q8R1</div>
-    </div>
-
-    <button class="copy-btn" onclick="copiarKey()">Copiar Key al Portapapeles</button>
-
-    <div class="instructions">
-      Copia la key y pégala en tu <strong>ejecutor de Roblox</strong> para activar el script.
-    </div>
-  </div>
-
-  <script>
-    // Key fija (cámbiala aquí si quieres otra)
-    const KEY = "CASEY-SP-7X9K-2M4P-Q8R1";
-
-    function copiarKey() {
-      navigator.clipboard.writeText(KEY).then(() => {
-        alert("✅ Key copiada correctamente.\nPégala en tu ejecutor de Roblox.");
-      }).catch(() => {
-        // Fallback por si el navegador bloquea el clipboard
-        const temp = document.createElement("textarea");
-        temp.value = KEY;
-        document.body.appendChild(temp);
-        temp.select();
-        document.execCommand("copy");
-        document.body.removeChild(temp);
-        alert("✅ Key copiada correctamente.\nPégala en tu ejecutor de Roblox.");
-      });
-    }
-  </script>
+<div class="card">
+<h1>SERVE PENE HUB</h1>
+<div class="sub">¡Anuncios Completados con Éxito!</div>
+<div class="num-box">Tu número es: <span id="miNum">1</span></div>
+<input type="number" id="inp" placeholder="Escribe tu número" inputmode="numeric">
+<button onclick="validar()">Obtener Key</button>
+<div class="err" id="err"></div>
+<div class="key-box" id="kb">
+<div class="lbl">Tu Key</div>
+<div class="val" id="kv"></div>
+<button class="copy" onclick="copiar()">Copiar Key al Portapapeles</button>
+</div>
+<div class="info">Copia la key y pégala en tu <b>ejecutor de Roblox</b>.</div>
+</div>
+<script>
+const MI_NUMERO = 1;
+const MI_KEY = "CASEY-SP-7X9K-2M4P-Q8R1";
+document.getElementById("miNum").textContent = MI_NUMERO;
+function validar(){
+const v = parseInt(document.getElementById("inp").value);
+const e = document.getElementById("err");
+const kb = document.getElementById("kb");
+e.textContent = "";
+kb.style.display = "none";
+if(v === MI_NUMERO){
+document.getElementById("kv").textContent = MI_KEY;
+kb.style.display = "block";
+}else{
+e.textContent = "Ese no es tu número.";
+}
+}
+function copiar(){
+navigator.clipboard.writeText(MI_KEY).then(()=>alert("Key copiada.")).catch(()=>{
+const t=document.createElement("textarea");t.value=MI_KEY;document.body.appendChild(t);t.select();document.execCommand("copy");document.body.removeChild(t);alert("Key copiada.");});
+}
+</script>
 </body>
 </html>
